@@ -19,7 +19,7 @@ public class ClutterPlacement : MonoBehaviour
         pointGenerator.Generate(out points);
         foreach (Vector2 v in points)
         {
-            Vector3 v3 = new Vector3(v.x, 0, v.y) + transform.position;
+			Vector3 v3 = new Vector3(v.x, v.y, v.y) + transform.position;
             GameObject go = Instantiate(GetRandomClutter(), v3, transform.rotation);
             if(go)
             {

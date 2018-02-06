@@ -82,6 +82,16 @@ public struct IntPoint
         return new IntPoint(a.x + x, a.y + y);
     }
 
+	public static IntPoint Sub(IntPoint a, int x, int y)
+	{
+		return Add (a, -x, -y);
+	}
+
+	public static IntPoint Sub(IntPoint a, IntPoint b)
+	{
+		return Sub (a, b.x, b.y);
+	}
+
     public static float Distance(IntPoint a, IntPoint b)
     {
         return Vector2.Distance(a.ToVector(), b.ToVector());

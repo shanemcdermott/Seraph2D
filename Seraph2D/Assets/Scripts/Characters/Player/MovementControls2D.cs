@@ -16,6 +16,10 @@ public class MovementControls2D : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			Application.Quit ();
+		}
+		
 		moveDir.x = Input.GetAxis ("Horizontal") * speed * Time.fixedDeltaTime;
 		moveDir.y = Input.GetAxis ("Vertical") * speed * Time.fixedDeltaTime;
 		transform.position += moveDir;

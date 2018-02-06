@@ -12,6 +12,11 @@ public class ProjectedObject : MonoBehaviour
 	[Tooltip("If true, depth is recalculated at runtime")]
 	public bool canMove = false;
 
+	void Start()
+	{
+		CalculateZ ();
+	}
+
 	void CalculateZ()
 	{
 		SpriteRenderer renderer = GetComponent<SpriteRenderer>();

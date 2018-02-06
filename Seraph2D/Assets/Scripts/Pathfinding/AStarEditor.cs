@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if (UNITY_EDITOR)
 using UnityEditor;
 
 [CustomEditor(typeof(TileAStar))]
 public class AStarEditor : Editor {
 
-    public override void OnInspectorGUI()
+    public  void OnInspectorGUI()
     {
         base.OnInspectorGUI();
         TileAStar world = (TileAStar)target;
@@ -36,3 +37,4 @@ public class AStarEditor : Editor {
         */
     }
 }
+#endif

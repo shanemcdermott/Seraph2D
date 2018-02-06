@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 114834245988869986}
   - component: {fileID: 61726788660454250}
   - component: {fileID: 61072918582539242}
+  - component: {fileID: 114726664211215512}
   m_Layer: 0
   m_Name: CombinedHut
   m_TagString: Untagged
@@ -331,6 +332,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorOffset: 0
   canMove: 0
+--- !u!114 &114726664211215512
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1515716605190216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b543e425dfb3b464e80fc52ed8fcbfa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderers:
+  - {fileID: 212876864982952766}
+  - {fileID: 212178180607799670}
+  - {fileID: 212225502819317580}
+  - {fileID: 212974389253109900}
+  paletteIds: 00000000010000000000000001000000
 --- !u!114 &114834245988869986
 MonoBehaviour:
   m_ObjectHideFlags: 1

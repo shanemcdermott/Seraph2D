@@ -6,13 +6,21 @@ using UnityEngine;
 
 public class Node : MonoBehaviour, IHasConnections<Node>
 {
-    protected List<IConnection<Node>> edges = new List<IConnection<Node>>();
+    protected List<Node> connections;
+
+    public void Start()
+    {
+        if(connections == null)
+        {
+            connections = new List<Node>();
+        }
+    }
 
     /// <summary>
-    /// Adds CellEdge to edges as well as to @connection's edges.
+    /// Adds NodeEdge to edges as well as to @connection's edges.
     /// </summary>
     /// <param name="connection">
-    /// The 'to' Cell to add a connection to.
+    /// The 'to' Node to add a connection to.
     /// </param>
 
     public void AddConnection(Node connection)
@@ -21,18 +29,10 @@ public class Node : MonoBehaviour, IHasConnections<Node>
         {
             return;
         }
-        if(IsConnectedTo(connection))
+        if(!IsConnectedTo(connection))
         {
-            Debug.Log("Already connected to " + connection.ToString());
-        }
-        else
-        {
-            NodeEdge ce = new NodeEdge(this, connection);
-            edges.Add(ce);
-            if(!connection.IsConnectedTo(this))
-            {
-                connection.edges.Add(ce);
-            }
+            connections.Add(connection);
+            connection.AddConnection(this);
         }
 
 
@@ -40,10 +40,8 @@ public class Node : MonoBehaviour, IHasConnections<Node>
 
     public void RemoveConnection(Node connection)
     {
-        int i = IndexOf(connection);
-        if(i >= 0)
+        if(connections.Remove(connection))
         {
-            edges.RemoveAt(i);
             connection.RemoveConnection(this);
         }
     }
@@ -55,38 +53,25 @@ public class Node : MonoBehaviour, IHasConnections<Node>
 
     public int IndexOf(Node other)
     {
-        if(IsNullOrThis(other))
-        {
-            return -1;
-        }
-
-        for(int i = 0; i < edges.Count; i++)
-        {
-            if(edges[i].HasNode(other))
-            {
-                return i;
-            }
-        }
-
-        return -1;
+        return connections.IndexOf(other);
     }
 
     public bool IsConnectedTo(Node other)
     {
-        return IndexOf(other) > -1;
+        return connections.Contains(other);
     }
 
     public int NumConnections()
     {
-        return edges.Count;
+        return connections.Count;
     }
 
     public void GetConnections(out List<IConnection<Node>> connections)
     {
         connections = new List<IConnection<Node>>();
-        foreach(NodeEdge e in edges)
+        foreach(Node n in this.connections)
         {
-            connections.Add(e);
+            connections.Add(new NodeEdge(this, n));
         }
     }
 
@@ -97,9 +82,8 @@ public class Node : MonoBehaviour, IHasConnections<Node>
 
     public void DrawConnections()
     {
-        foreach (NodeEdge e in edges)
+        foreach (Node c in connections)
         {
-            Node c = e.GetToNode();
             if (c != null)
             {
                 Gizmos.DrawLine(transform.position, c.transform.position);

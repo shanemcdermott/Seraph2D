@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GridFace : MonoBehaviour
+public class PolyGrid : MonoBehaviour
 {
+    [SerializeField]
+    protected List<Node> faces;
+
     [SerializeField]
     protected List<Node> vertices;
 
-    // Use this for initialization
-    void Start () {
+	// Use this for initialization
+	void Start ()
+    {
 		
 	}
 	

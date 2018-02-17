@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cell : MonoBehaviour, IHasConnections<Cell>
-{
- 
 
-    protected List<CellEdge> edges = new List<CellEdge>();
+
+public class Node : MonoBehaviour, IHasConnections<Node>
+{
+    protected List<IConnection<Node>> edges = new List<IConnection<Node>>();
 
     /// <summary>
     /// Adds CellEdge to edges as well as to @connection's edges.
@@ -15,7 +15,7 @@ public class Cell : MonoBehaviour, IHasConnections<Cell>
     /// The 'to' Cell to add a connection to.
     /// </param>
 
-    public void AddConnection(Cell connection)
+    public void AddConnection(Node connection)
     {
         if(IsNullOrThis(connection))
         {
@@ -27,7 +27,7 @@ public class Cell : MonoBehaviour, IHasConnections<Cell>
         }
         else
         {
-            CellEdge ce = new CellEdge(this, connection);
+            NodeEdge ce = new NodeEdge(this, connection);
             edges.Add(ce);
             if(!connection.IsConnectedTo(this))
             {
@@ -38,33 +38,53 @@ public class Cell : MonoBehaviour, IHasConnections<Cell>
 
     }
 
-    public bool IsNullOrThis(Cell c)
+    public void RemoveConnection(Node connection)
+    {
+        int i = IndexOf(connection);
+        if(i >= 0)
+        {
+            edges.RemoveAt(i);
+            connection.RemoveConnection(this);
+        }
+    }
+
+    public bool IsNullOrThis(Node c)
     {
         return c == null || c.Equals(this);
     }
 
-    public bool IsConnectedTo(Cell other)
+    public int IndexOf(Node other)
     {
-        if (IsNullOrThis(other))
+        if(IsNullOrThis(other))
         {
-            return false;
+            return -1;
         }
 
-        foreach(CellEdge e in edges)
+        for(int i = 0; i < edges.Count; i++)
         {
-            if(e.HasNode(other))
+            if(edges[i].HasNode(other))
             {
-                return true;
+                return i;
             }
         }
 
-        return false;
+        return -1;
     }
 
-    public void GetConnections(out List<IConnection<Cell>> connections)
+    public bool IsConnectedTo(Node other)
     {
-        connections = new List<IConnection<Cell>>();
-        foreach(CellEdge e in edges)
+        return IndexOf(other) > -1;
+    }
+
+    public int NumConnections()
+    {
+        return edges.Count;
+    }
+
+    public void GetConnections(out List<IConnection<Node>> connections)
+    {
+        connections = new List<IConnection<Node>>();
+        foreach(NodeEdge e in edges)
         {
             connections.Add(e);
         }
@@ -77,9 +97,9 @@ public class Cell : MonoBehaviour, IHasConnections<Cell>
 
     public void DrawConnections()
     {
-        foreach (CellEdge e in edges)
+        foreach (NodeEdge e in edges)
         {
-            Cell c = e.GetToNode();
+            Node c = e.GetToNode();
             if (c != null)
             {
                 Gizmos.DrawLine(transform.position, c.transform.position);

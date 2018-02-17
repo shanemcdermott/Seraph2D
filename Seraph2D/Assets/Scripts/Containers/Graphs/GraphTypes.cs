@@ -46,6 +46,8 @@ public interface IConnection<T>
     /// </summary>
     /// <returns></returns>
     T GetToNode();
+
+    bool HasNode(T t);
 }
 
 public enum NodeCategory

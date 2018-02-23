@@ -6,14 +6,10 @@ using UnityEngine;
 
 public class Node : MonoBehaviour, IHasConnections<Node>
 {
-    protected List<Node> connections;
+	protected List<Node> connections =new List<Node>();
 
     public void Start()
     {
-        if(connections == null)
-        {
-            connections = new List<Node>();
-        }
     }
 
     /// <summary>

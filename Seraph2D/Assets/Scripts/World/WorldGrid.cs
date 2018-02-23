@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WorldGrid : MonoBehaviour 
 {
-
+	public  Random rand;
 	public GameObject[] chunkOptions;
 
 	public static Vector2 chunkSize = new Vector2 (20, 20);

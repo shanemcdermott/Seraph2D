@@ -165,7 +165,7 @@ public struct DelaunayTriangle
 public class DelaunayTriangulation : MonoBehaviour
 {
     [SerializeField]
-    protected Rect bounds = new Rect(0, 0, 100, 100);
+	protected PolygonCollider2D bounds;
     [SerializeField]
     protected int NumTriangles = 0;
     [SerializeField]
@@ -182,7 +182,6 @@ public class DelaunayTriangulation : MonoBehaviour
         
         points = new List<Vector2>(Corners());
         triangles = new List<IntTriangle>();
-
         superTriangle = new DelaunayTriangle(0, 1, 2);
 
         triangles.Add(new IntTriangle(0, 1, 2));
@@ -191,11 +190,7 @@ public class DelaunayTriangulation : MonoBehaviour
 
     public Vector2[] Corners()
     {
-        Vector2 bottomLeft = new Vector2(bounds.xMin, bounds.yMin);
-        Vector2 topLeft = new Vector2(bounds.xMin, bounds.yMax);
-        Vector2 bottomRight = new Vector2(bounds.xMax, bounds.yMin);
-        Vector2 topRight = new Vector2(bounds.xMax, bounds.yMax);
-        return new Vector2[] {topLeft, bottomLeft,bottomRight, topRight};
+		return bounds.points;
     }
 
 

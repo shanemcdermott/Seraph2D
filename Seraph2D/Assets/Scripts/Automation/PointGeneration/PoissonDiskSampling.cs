@@ -8,9 +8,6 @@ using UnityEngine;
 
 public class PoissonDiskSampling : PointGenerator
 {
-
-    public float width = 100;
-    public float height = 100;
     //Minimum distance between points
     public float minDistance = 5;
     //How many new points each new point should try to spawn
@@ -69,7 +66,7 @@ public class PoissonDiskSampling : PointGenerator
         for(;sampleCount < newPointsCount; sampleCount++)
         {
             Vector2 newPoint = GenerateRandomPointAround(sourcePoint, minDistance);
-            if (bounds.Contains(newPoint) && !IsInNeighborhood(newPoint))
+            if (bounds.bounds.Contains(newPoint) && !IsInNeighborhood(newPoint))
             {
                 AddPoint(newPoint);
                 return newPoint;

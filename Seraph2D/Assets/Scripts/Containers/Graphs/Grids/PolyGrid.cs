@@ -8,11 +8,16 @@ public class PolyGrid : MonoBehaviour
     protected List<Node> faces;
 
     [SerializeField]
-    protected List<Node> vertices;
+	protected List<Node> vertices = new List<Node>();
 
-	// Use this for initialization
-	void Start ()
-    {
+
+	public void AddVertex(Node newVertex)
+	{
+		vertices.Add (newVertex);
+	}
+
+	public void Triangulate()
+	{
 		
 	}
 	

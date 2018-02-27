@@ -17,12 +17,12 @@ public class CharacterController2D : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-		
+		movementControls.ProcessInput ();
 	}
 
     void FixedUpdate()
     {
-        movementControls.ProcessInput();
+		movementControls.ApplyMovement ();
         int moveDir = Direction.FromVector2(movementControls.GetMoveDir());
         animator.SetInteger("Direction", moveDir);
     }

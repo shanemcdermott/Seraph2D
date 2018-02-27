@@ -1,20 +1,21 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Automation\PointGeneration\PointGenerator.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Characters\Player\MovementControls2D.cs">
     <Files>
       <File FileName="Assets\Scripts\World\WorldGrid.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Aesthetic\PaletteManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Automation\PointGeneration\PointGeneratorEditor.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Characters\AI\Wander.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\TreeBuilder.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Containers\Graphs\Grids\Node.cs" Line="12" Column="6" />
+      <File FileName="Assets\Scripts\Containers\Graphs\Grids\Node.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Containers\Graphs\Grids\NodeEdge.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Containers\Graphs\Grids\PolyGrid.cs" Line="21" Column="3" />
-      <File FileName="Assets\Scripts\Containers\Graphs\TriangleGraphs\DelaunayTriangulation.cs" Line="184" Column="45" />
+      <File FileName="Assets\Scripts\Containers\Graphs\Grids\PolyGrid.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Containers\Graphs\TriangleGraphs\DelaunayTriangulation.cs" Line="1" Column="1" />
       <File FileName="Assets\Editor\NodeEditor.cs" Line="1" Column="1" />
-      <File FileName="Assets\Editor\PolyGraphEditor.cs" Line="17" Column="9" />
-      <File FileName="Assets\Scripts\Automation\PointGeneration\PoissonDiskSampling.cs" Line="10" Column="2" />
-      <File FileName="Assets\Scripts\Automation\PointGeneration\PointGenerator.cs" Line="18" Column="24" />
+      <File FileName="Assets\Editor\PolyGraphEditor.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Automation\PointGeneration\PoissonDiskSampling.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Automation\PointGeneration\PointGenerator.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Characters\Player\MovementControls2D.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

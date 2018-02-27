@@ -6,24 +6,44 @@ public class MovementControls2D : MonoBehaviour
 {
 	public float speed = 1;
 
-	private Vector3 moveDir;
+    private Vector3 moveSpeed;
+	private Vector2 moveDir;
+    private bool isJumping;
 
 	void Start()
 	{
-		moveDir = new Vector3 ();
+        moveSpeed = new Vector3();
+		moveDir = new Vector2 ();
+        isJumping = false;
 	}
 
-	// Update is called once per frame
-	void FixedUpdate () 
+	public void ProcessInput () 
 	{
 		if (Input.GetKeyDown (KeyCode.Escape)) {
 			Application.Quit ();
 		}
-		
-		moveDir.x = Input.GetAxis ("Horizontal") * speed * Time.fixedDeltaTime;
-		moveDir.y = Input.GetAxis ("Vertical") * speed * Time.fixedDeltaTime;
-		transform.position += moveDir;
+
+        moveDir.x = Input.GetAxis("Horizontal");
+        moveDir.y = Input.GetAxis("Vertical");
+
+        moveSpeed.x = moveDir.x * speed * Time.fixedDeltaTime;
+		moveSpeed.y = moveDir.y * speed * Time.fixedDeltaTime;
+        transform.position += moveSpeed;
 	}
 
+    public void SetJumping(bool jumping)
+    {
+        isJumping = jumping;
+    }
+
+    public Vector3 GetMoveSpeed()
+    {
+        return moveSpeed;
+    }
+
+    public Vector2 GetMoveDir()
+    {
+        return moveDir;
+    }
 
 }

@@ -5,6 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/DemoScene.unity
     guid: 1eb55da9487a67a4fb9f75f4c928cee0
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: fb013778f035144459fd7ccd3622422a
+  - enabled: 1
+    path: Assets/Scenes/TestScene.unity
+    guid: 3a51a8dca230d8f45b25c30772599979
+  - enabled: 1
+    path: Assets/Scenes/WaterPuzzle.unity
+    guid: 1aec2c6dfa72cf549bbdc9bfa3fdb894

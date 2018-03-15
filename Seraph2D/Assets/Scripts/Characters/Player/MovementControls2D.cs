@@ -7,7 +7,8 @@ public enum MovementState
 	Idle,
 	Walking,
 	Running,
-	Jumping
+	Jumping,
+    Casting
 }
 
 public class MovementControls2D : MonoBehaviour 
@@ -89,6 +90,23 @@ public class MovementControls2D : MonoBehaviour
 		}
 
 	}
+
+    public bool IsCasting()
+    {
+        return this.moveState == MovementState.Casting;
+    }
+
+    public void SetCasting(bool bIsCasting)
+    {
+        if(bIsCasting)
+        {
+            SetMovementState(MovementState.Casting);
+        }
+        else if(IsCasting())
+        {
+            SetMovementState(MovementState.Idle);
+        }
+    }
 
 	public bool IsIdle()
 	{

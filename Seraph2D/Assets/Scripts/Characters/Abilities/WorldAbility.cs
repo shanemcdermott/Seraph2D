@@ -8,12 +8,18 @@ using UnityEngine;
 public class WorldAbility : MonoBehaviour
 {
     public Material overlayMat;
+    public float duration = 1.5f;
 
-
-    public void Use()
+    public virtual bool CanUse()
     {
-        GameManager.inst.cameraManager.SetOverlayMaterial(overlayMat);
+        return true;
+    }
+
+    public float Use()
+    {
+        if (!CanUse()) return 0f;
+
+        return GameManager.inst.cameraManager.SetOverlayMaterial(overlayMat,duration);
     }
 	
-
 }

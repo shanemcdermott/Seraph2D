@@ -7,7 +7,7 @@ public class CameraManager : MonoBehaviour
 
     public SpriteRenderer overlaySpriteRender;
     public Material defaultOverlayMaterial;
-
+    public float BookendPct = 0.01f;
 
     private Coroutine currentCoroutine;
 
@@ -16,18 +16,19 @@ public class CameraManager : MonoBehaviour
     {
 	}
 
-    public void SetOverlayMaterial(Material mat)
+    public float SetOverlayMaterial(Material mat, float Duration)
     {
-        SetOverlayMaterial(mat, 3f, 0.5f);
+        return SetOverlayMaterial(mat, Duration, Duration * BookendPct);
     }
 
-    public void SetOverlayMaterial(Material mat, float Duration, float BlendTime)
+    public float SetOverlayMaterial(Material mat, float Duration, float BlendTime)
     {
         if(currentCoroutine != null)
         {
             StopCoroutine(currentCoroutine);
         }
         currentCoroutine = StartCoroutine(ApplyOverlay(mat, Duration, BlendTime));
+        return Duration + BlendTime * 2;
     }
 	
     IEnumerator ApplyOverlay(Material mat, float duration, float blendTime)

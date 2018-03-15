@@ -44,3 +44,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: DefaultOverlay
+    uniqueID: 595967565
+    locked: 0
+  - name: Interactive
+    uniqueID: 1983544367
+    locked: 0

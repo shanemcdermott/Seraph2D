@@ -1084,6 +1084,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!212 &664868636 stripped
+SpriteRenderer:
+  m_PrefabParentObject: {fileID: 212977769277239548, guid: 6f3913b14645c4a4ab0e91609589f30b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1272529116}
 --- !u!1 &691052892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1259,6 +1264,53 @@ Tilemap:
   m_TileRefreshArray:
   - serializedVersion: 1
     m_DirtyIndex: 0
+--- !u!1001 &720415011
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4250164907746106, guid: 3f4240c76ff61d04daca48641f7330eb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250164907746106, guid: 3f4240c76ff61d04daca48641f7330eb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250164907746106, guid: 3f4240c76ff61d04daca48641f7330eb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250164907746106, guid: 3f4240c76ff61d04daca48641f7330eb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250164907746106, guid: 3f4240c76ff61d04daca48641f7330eb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250164907746106, guid: 3f4240c76ff61d04daca48641f7330eb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250164907746106, guid: 3f4240c76ff61d04daca48641f7330eb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250164907746106, guid: 3f4240c76ff61d04daca48641f7330eb, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114958511677761928, guid: 3f4240c76ff61d04daca48641f7330eb,
+        type: 2}
+      propertyPath: overlaySpriteRender
+      value: 
+      objectReference: {fileID: 664868636}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 3f4240c76ff61d04daca48641f7330eb, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &852909759
 GameObject:
   m_ObjectHideFlags: 0

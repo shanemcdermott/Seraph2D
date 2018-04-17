@@ -24,7 +24,7 @@ namespace Ninja.Controller
         }
 
 
-        private GameObject playerObject;
+        public GameObject playerObject;
         public BattleController battleController;
 
 

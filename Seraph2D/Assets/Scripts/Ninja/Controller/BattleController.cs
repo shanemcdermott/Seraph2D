@@ -11,7 +11,7 @@ namespace Ninja.Controller
     public class BattleController : StateMachine
     {
 
-        public WorldAbility[] abilities;
+        public GameAbility[] abilities;
 
         public CameraRig cameraRig
         {

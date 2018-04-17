@@ -10,17 +10,16 @@ namespace Ninja.Gameplay.Abilities
     /// <summary>
     /// Ability that impacts the world and has a tint
     /// </summary>
-    public class WorldAbility : MonoBehaviour
+    public class WorldAbility : GameAbility
     {
         public Material overlayMat;
-        public float duration = 1.5f;
 
         public virtual bool CanUse()
         {
             return true;
         }
 
-        public float Use()
+        public override float Use()
         {
             if (!CanUse()) return 0f;
             Debug.Log("Starting Ability");

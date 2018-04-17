@@ -19,6 +19,8 @@ public class MovementControls2D : MonoBehaviour
 
     private Vector3 moveSpeed;
 	private Vector2 moveDir;
+
+	private	Vector2Int	moveTarget;
 	private MovementState moveState;
 
 	void Start()
@@ -38,6 +40,14 @@ public class MovementControls2D : MonoBehaviour
         moveDir.x = Input.GetAxis("Horizontal");
         moveDir.y = Input.GetAxis("Vertical");
 
+	}
+
+	public void MoveToTarget(Vector2Int newTarget)
+	{
+		moveTarget=newTarget;
+		moveDir.x=newTarget.x-transform.position.x;
+		moveDir.y=newTarget.y-transform.position.y;
+		moveState=MovementState.Walking;
 	}
 
 	public void ApplyMovement()
@@ -139,9 +149,17 @@ public class MovementControls2D : MonoBehaviour
     {
         return moveDir;
     }
-
+//nino kuni
 	protected virtual void SetMovementState(MovementState state)
 	{
 		this.moveState = state;
+	}
+
+	public void	Update()
+	{
+		if(Vector3.Distance(transform.position,new	Vector3(moveTarget.x,moveTarget.y,transform.position.z))>0.01f)
+		{
+			ApplyMovement();
+		}
 	}
 }

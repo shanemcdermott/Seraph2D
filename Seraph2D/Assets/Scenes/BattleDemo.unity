@@ -255,8 +255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae188eb512015e9409ed15446c6bb4c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overlayMat: {fileID: 2100000, guid: 584b1963d26ce2f4582dd7594e47225b, type: 2}
   duration: 1.5
+  overlayMat: {fileID: 2100000, guid: 584b1963d26ce2f4582dd7594e47225b, type: 2}
 --- !u!114 &323871997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,8 +268,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae188eb512015e9409ed15446c6bb4c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overlayMat: {fileID: 2100000, guid: 331d7ac5ff71d2041ae60a7bf6399b83, type: 2}
   duration: 1.5
+  overlayMat: {fileID: 2100000, guid: 331d7ac5ff71d2041ae60a7bf6399b83, type: 2}
 --- !u!114 &323871998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,11 +278,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 323871994}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae188eb512015e9409ed15446c6bb4c2, type: 3}
+  m_Script: {fileID: 11500000, guid: fc9ec59a15fd7aa408e92f312749af08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overlayMat: {fileID: 2100000, guid: 584b1963d26ce2f4582dd7594e47225b, type: 2}
-  duration: 1.5
+  duration: 1
 --- !u!1001 &622451195
 Prefab:
   m_ObjectHideFlags: 0
@@ -440,6 +439,25 @@ Transform:
   m_PrefabParentObject: {fileID: 4240912691839248, guid: 6a016fa92e6e1614b94375b0f7d954fb,
     type: 2}
   m_PrefabInternal: {fileID: 1381650709}
+--- !u!1 &1100894991 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1290621648187914, guid: 6a016fa92e6e1614b94375b0f7d954fb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1381650709}
+--- !u!114 &1100894998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1100894991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9da9a4255a8e61a49a5f3c8243f6802e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 1
+  runSpeed: 2
+  jumpSpeed: 1
 --- !u!1001 &1381650709
 Prefab:
   m_ObjectHideFlags: 0
@@ -493,6 +511,15 @@ Prefab:
         type: 2}
       propertyPath: m_SortingLayer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290621648187914, guid: 6a016fa92e6e1614b94375b0f7d954fb, type: 2}
+      propertyPath: m_TagString
+      value: Hero
+      objectReference: {fileID: 0}
+    - target: {fileID: 114034952001459788, guid: 6a016fa92e6e1614b94375b0f7d954fb,
+        type: 2}
+      propertyPath: currentHealth
+      value: 114
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114127150769798162, guid: 6a016fa92e6e1614b94375b0f7d954fb, type: 2}
@@ -797,6 +824,11 @@ Prefab:
       propertyPath: battleController
       value: 
       objectReference: {fileID: 1433961166}
+    - target: {fileID: 114099199039630762, guid: 3f4240c76ff61d04daca48641f7330eb,
+        type: 2}
+      propertyPath: playerObject
+      value: 
+      objectReference: {fileID: 1100894991}
     m_RemovedComponents:
     - {fileID: 114958511677761928, guid: 3f4240c76ff61d04daca48641f7330eb, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 3f4240c76ff61d04daca48641f7330eb, type: 2}

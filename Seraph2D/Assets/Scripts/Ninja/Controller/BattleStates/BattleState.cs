@@ -41,7 +41,7 @@ namespace Ninja.Controller.BattleStates
 
         protected virtual void OnAction(InfoEventArgs<int> e)
         {
-            owner.testAbility.Use();
+            owner.abilities[e.info].Use();
         }
 
         protected virtual void SelectTile(Vector3Int p)

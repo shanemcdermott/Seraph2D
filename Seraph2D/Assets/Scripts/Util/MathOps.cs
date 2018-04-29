@@ -1,13 +1,17 @@
-﻿using System.Collections;
+﻿//Shane McDermott 2018
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MathOps {
 
-
+    public static Vector3 Midpoint(Vector3 A, Vector3 B)
+    {
+        return Vector3.Lerp(A, B, 0.5f);
+    }
     public static Vector2 Midpoint(Vector2 A, Vector2 B)
     {
-        return (A + B) * 0.5f;
+        return Vector2.Lerp(A, B, 0.5f);
     }
 
     public static float BisectorSlope(Vector2 A, Vector2 B)
@@ -32,13 +36,13 @@ public class MathOps {
 
     public static Vector2 CircumCenter(Vector2 A, Vector2 B, Vector2 C)
     {
-        Vector2 AB = MathOps.Midpoint(A, B);
-        Vector2 AC = MathOps.Midpoint(A, C);
-        Vector2 BC = MathOps.Midpoint(B, C);
+        Vector2 AB = Vector2.Lerp(A, B, 0.5f);
+        Vector2 AC = Vector2.Lerp(A, C, 0.5f);
+        Vector2 BC = Vector2.Lerp(B, C, 0.5f);
 
-        Vector2 MA = MathOps.Midpoint(AB, AC);
-        Vector2 MC = MathOps.Midpoint(AC, BC);
-        Vector2 centerPoint = MathOps.Midpoint(MA, MC);
+        Vector2 MA = Vector2.Lerp(AB, AC, 0.5f);
+        Vector2 MC = Vector2.Lerp(AC, BC, 0.5f);
+        Vector2 centerPoint = Vector2.Lerp(MA, MC, 0.5f);
         
         /*
         Vector2 MidpointAB = Midpoint(A, B);
@@ -94,5 +98,8 @@ public class MathOps {
        // return Vector2.Distance(circumCenter, p) <= circumRadius * circumRadius; 
     }
 
-    
+    public static Vector3 FlipYZ(Vector3 P)
+    {
+        return new Vector3(P.x, P.z, P.y);
+    }
 }

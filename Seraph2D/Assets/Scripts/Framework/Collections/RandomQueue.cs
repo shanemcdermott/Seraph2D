@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Framework.Containers
+namespace Framework.Collections
 {
     public class RandomQueue<T>
     {

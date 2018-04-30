@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Ninja.Camera
+namespace Framework.Camera
 {
 
     [System.Serializable]

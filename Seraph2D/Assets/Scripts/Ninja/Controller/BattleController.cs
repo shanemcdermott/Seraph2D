@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-using Ninja.Camera;
-using Ninja.Controller.BattleStates;
-using Ninja.Gameplay.Abilities;
+using Framework.Camera;
+using Framework.Controller.BattleStates;
+using Framework.Gameplay.Abilities;
+using Framework.Collections;
 
-namespace Ninja.Controller
+namespace Framework.Controller
 {
 
     public class BattleController : StateMachine

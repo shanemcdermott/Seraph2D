@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using Ninja.Camera;
 
+using Framework.Camera;
+using Framework.Collections;
 
-namespace Ninja.Controller.BattleStates
+namespace Framework.Controller.BattleStates
 {
 
     public abstract class BattleState : State

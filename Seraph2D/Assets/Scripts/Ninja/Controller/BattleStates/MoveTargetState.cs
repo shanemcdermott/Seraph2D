@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace Ninja.Controller.BattleStates
+namespace Framework.Controller.BattleStates
 {
     public class MoveTargetState : BattleState
     {

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-using Ninja.Camera;
+using Framework.Camera;
 
-namespace Ninja.Controller
+namespace Framework.Controller
 {
 
     public class GameManager : MonoBehaviour

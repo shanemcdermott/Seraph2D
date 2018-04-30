@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-using Ninja.Controller;
-using Ninja.Camera;
+using Framework.Controller;
+using Framework.Camera;
 
-namespace Ninja.Gameplay.Abilities
+namespace Framework.Gameplay.Abilities
 {
     /// <summary>
     /// Ability that impacts the world and has a tint

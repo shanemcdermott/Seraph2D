@@ -2,7 +2,7 @@
 using System.Collections;
 
 
-namespace Ninja.Controller.BattleStates
+namespace Framework.Controller.BattleStates
 {
     public class InitBattleState : BattleState
     {
@@ -14,16 +14,8 @@ namespace Ninja.Controller.BattleStates
 
         IEnumerator Init()
         {
-            if (levelData != null)
-            {
-                board.Load(levelData);
-                Vector3Int p = levelData.tiles[0];
-                SelectTile(p);
-            }
-            else
-            {
-                SelectTile(new Vector3Int(0, 0, 0));
-            }
+            //Could Load here
+            SelectTile(new Vector3Int(0, 0, 0));
             yield return null;
             owner.ChangeState<MoveTargetState>();
         }

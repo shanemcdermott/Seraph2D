@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-using Ninja.Controller;
+using Framework.Controller;
 
-namespace Ninja.Gameplay.Abilities
+namespace Framework.Gameplay.Abilities
 {
 public class GameAbility : MonoBehaviour 
 {

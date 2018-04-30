@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Ninja.Camera
+namespace Framework.Camera
 {
 
     public class CameraRig : MonoBehaviour
